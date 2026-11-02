@@ -14,7 +14,7 @@ import util.Art;
 public class MenuScene extends Scene {
     private static final double QUIT_DELAY = 0.18;
 
-    private final Button story = new Button(GamePanel.W / 2 - 100, 400, 200, 46, "Story Mode");
+    private final Button story = new Button(GamePanel.W / 2 - 100, 400, 200, 46, "Stage" + " Mode");
     private final Button classic = new Button(GamePanel.W / 2 - 100, 462, 200, 46, "Classic Mode");
     private final Button quit = new Button(GamePanel.W / 2 - 100, 524, 200, 46, "Quit");
     private Point mouse = new Point();
