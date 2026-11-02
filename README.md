@@ -13,7 +13,6 @@
 ## Run
 Requires Java 21+
     ./run.sh
-หรือ `java -jar TangmoGame_v13.jar` (วางโฟลเดอร์ `sounds/` ไว้ข้างไฟล์ jar)
 
 ## Project Structure
 main · core · scene · model (entity, attack, object) · map · ui · util
