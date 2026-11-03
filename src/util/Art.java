@@ -62,6 +62,17 @@ public final class Art {
         g.setTransform(old);
     }
 
+    public static void outlinedText(
+            Graphics2D g, String s, int cx, int y, Color fill, Color outline, int thick) {
+        int x = cx - g.getFontMetrics().stringWidth(s) / 2;
+        g.setColor(outline);
+        for (int dx = -thick; dx <= thick; dx++)
+            for (int dy = -thick; dy <= thick; dy++)
+                if (dx != 0 || dy != 0) g.drawString(s, x + dx, y + dy);
+        g.setColor(fill);
+        g.drawString(s, x, y);
+    }
+
     public static void outlinedText(Graphics2D g, String s, int cx, int y, Color fill) {
         int x = cx - g.getFontMetrics().stringWidth(s) / 2;
         g.setColor(new Color(60, 30, 10));

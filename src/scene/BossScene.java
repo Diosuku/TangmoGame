@@ -330,11 +330,13 @@ public class BossScene extends Scene {
                     won ? "KNOCKOUT!" : "YOU DIED",
                     W / 2,
                     300,
-                    won ? new Color(255, 230, 90) : new Color(255, 110, 100));
+                    won ? new Color(255, 240, 120) : Color.WHITE,
+                    won ? new Color(130, 70, 0) : new Color(190, 20, 30),
+                    4);
 
             if (endT > END_DELAY) {
-                g.setFont(new Font("Tahoma", Font.PLAIN, 18));
-                g.setColor(map.getHudText());
+                g.setFont(new Font("Tahoma", Font.BOLD, 22));
+                g.setColor(Color.WHITE);
                 Art.centerText(
                         g,
                         won ? "ชนะ " + level.boss().getTitle() + " แล้ว!" : "ลองใหม่อีกครั้ง",
