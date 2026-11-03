@@ -49,7 +49,7 @@ public final class Hazards {
     }
 
     public static class Geyser implements Hazard {
-        private static final double WARN = 0.9, ERUPT = 0.7, HEIGHT = 300;
+        private static final double WARN = 1.3, ERUPT = 0.6, HEIGHT = 280;
         private final double x, period;
         private double t;
 
@@ -114,7 +114,7 @@ public final class Hazards {
     }
 
     public static class Icicle implements Hazard {
-        private static final double WAIT_AFTER = 1.2, SHAKE = 0.9, FALL_SPEED = 950, LEN = 64;
+        private static final double WAIT_AFTER = 1.2, SHAKE = 1.3, FALL_SPEED = 800, LEN = 64;
         private final double x, period;
         private double timer, y;
         private int state;

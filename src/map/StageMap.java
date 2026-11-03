@@ -98,11 +98,11 @@ public class StageMap {
                                 new Color(110, 70, 70),
                                 Color.WHITE,
                                 new Color(160, 70, 60));
-                m.hazards.add(new Hazards.Geyser(230, 4.2, 0.5));
-                m.hazards.add(new Hazards.Geyser(400, 4.8, 2.6));
-                m.hazards.add(new Hazards.Geyser(570, 5.4, 1.4));
+                m.hazards.add(new Hazards.Geyser(230, 6.0, 0.5));
+                m.hazards.add(new Hazards.Geyser(570, 6.6, 3.4));
                 m.platforms.add(new Platform(315, 500, 110));
                 m.platforms.add(new Platform(490, 440, 100));
+                m.platforms.add(new Platform(150, 500, 100));
             }
             default -> {
                 m =
@@ -117,12 +117,11 @@ public class StageMap {
                                 new Color(40, 70, 100),
                                 new Color(100, 150, 190));
                 m.icy = true;
-                m.windAccel = 520;
-                m.windOn = 2.2;
-                m.windOff = 3.5;
-                m.hazards.add(new Hazards.Icicle(210, 3.4, 0.0));
-                m.hazards.add(new Hazards.Icicle(390, 4.0, 1.5));
-                m.hazards.add(new Hazards.Icicle(560, 4.6, 2.8));
+                m.windAccel = 300;
+                m.windOn = 1.6;
+                m.windOff = 4.5;
+                m.hazards.add(new Hazards.Icicle(230, 5.2, 0.0));
+                m.hazards.add(new Hazards.Icicle(520, 6.0, 2.8));
                 m.platforms.add(new Platform(300, 500, 110));
             }
         }

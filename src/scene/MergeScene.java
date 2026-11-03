@@ -273,6 +273,10 @@ public class MergeScene extends Scene {
         g.fillRect(-OX, 0, GamePanel.W, GamePanel.H);
         g.setColor(new Color(210, 130, 50));
         g.fill(new RoundRectangle2D.Double(180, 280, 240, 250, 24, 24));
+        g.setColor(new Color(255, 240, 210));
+        g.setStroke(new BasicStroke(5f));
+        g.draw(new RoundRectangle2D.Double(180, 280, 240, 250, 24, 24));
+        g.setStroke(new BasicStroke(1f));
         g.setColor(Color.WHITE);
         g.setFont(new Font("Tahoma", Font.BOLD, 26));
         Art.centerText(g, "Game Over", 300, 325);

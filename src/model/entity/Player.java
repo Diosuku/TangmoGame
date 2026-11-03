@@ -127,7 +127,7 @@ public class Player {
         } else {
             boolean atFloor = onGround;
             double mul = atFloor && standingOn == null ? map.speedMultiplierAt(x) : 1.0;
-            double accel = atFloor && map.isIcy() ? 2.2 : 14;
+            double accel = atFloor && map.isIcy() ? 4.5 : 14;
             vx += (dir * SPEED * mul - vx) * Math.min(1, dt * accel);
             vx += map.getWindAccel() * dt;
             vy += GRAVITY * dt;

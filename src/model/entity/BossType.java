@@ -8,8 +8,8 @@ import model.attack.Attacks;
 public enum BossType {
     PINEAPPLE("กัปตันสับปะรด", 100),
     DURIAN("บารอนทุเรียน", 150),
-    PEPPER("ราชินีพริกผี", 210),
-    BLUEBERRY("ราชาบลูเบอร์รี่", 260);
+    PEPPER("ราชินีพริกผี", 150),
+    BLUEBERRY("ราชาบลูเบอร์รี่", 180);
 
     private final String title;
     private final int maxHp;
@@ -43,18 +43,18 @@ public enum BossType {
                             new Attacks.GroundRoller(3.0, 2));
             case PEPPER ->
                     List.of(
-                            new Attacks.SineWave(1.5, 0),
-                            new Attacks.AimedShot(1.3, 520, 0),
-                            new Attacks.GroundRoller(2.8, 1),
-                            new Attacks.SkyRain(0.7, 1),
-                            new Attacks.FanShot(3.0, 7, 0.25, 2));
+                            new Attacks.SineWave(2.2, 0),
+                            new Attacks.AimedShot(2.0, 440, 0),
+                            new Attacks.GroundRoller(3.6, 1),
+                            new Attacks.SkyRain(1.2, 1),
+                            new Attacks.FanShot(4.2, 5, 0.3, 2));
             case BLUEBERRY ->
                     List.of(
-                            new Attacks.AimedShot(1.7, 480, 0),
-                            new Attacks.FanShot(3.6, 5, 0.28, 0),
-                            new Attacks.GroundRoller(3.0, 1),
-                            new Attacks.SineWave(2.0, 1),
-                            new Attacks.SkyRain(1.1, 2));
+                            new Attacks.AimedShot(2.3, 420, 0),
+                            new Attacks.FanShot(4.6, 4, 0.32, 0),
+                            new Attacks.GroundRoller(3.8, 1),
+                            new Attacks.SineWave(2.8, 1),
+                            new Attacks.SkyRain(1.7, 2));
         };
     }
 }

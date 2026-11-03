@@ -90,7 +90,7 @@ public class BossScene extends Scene {
         if (phase != Phase.FIGHT || !fresh || pause.isOpen()) return;
         if (code == KeyEvent.VK_SPACE || code == KeyEvent.VK_W || code == KeyEvent.VK_UP)
             player.jump();
-        if (code == KeyEvent.VK_SHIFT || code == KeyEvent.VK_X) player.dash();
+        if (code == KeyEvent.VK_K || code == KeyEvent.VK_X) player.dash();
         if (code == KeyEvent.VK_DOWN || code == KeyEvent.VK_S) player.dropDown();
     }
 
@@ -170,7 +170,7 @@ public class BossScene extends Scene {
                         dt,
                         down(KeyEvent.VK_LEFT, KeyEvent.VK_A),
                         down(KeyEvent.VK_RIGHT, KeyEvent.VK_D),
-                        down(KeyEvent.VK_Z, KeyEvent.VK_J, KeyEvent.VK_C),
+                        down(KeyEvent.VK_Z, KeyEvent.VK_J),
                         GROUND,
                         damage,
                         map);
@@ -279,9 +279,35 @@ public class BossScene extends Scene {
 
         g.setFont(new Font("Tahoma", Font.PLAIN, 12));
         g.drawString(
-                "←/→ เดิน  Space กระโดด  ↓ ลงจากแท่น  Z ยิง  Shift ดัช  Esc เมนู",
+                "←/→ เดิน  Space กระโดด  ↓ ลงจากแท่น  Z/J ยิง  K/X แดช  Esc เมนู",
                 GamePanel.W - 440,
                 712);
+    }
+
+    private void drawResultFrame(Graphics2D g, boolean won, double k) {
+        int W = GamePanel.W, H = GamePanel.H;
+        int a = (int) (255 * k);
+        g.setColor(new Color(0, 0, 0, (int) (130 * k)));
+        g.fillRect(0, 0, W, H);
+
+        double pw = 560, ph = 330, px = W / 2.0 - pw / 2, py = 200 + (1 - k) * 20;
+        Color accent = won ? new Color(255, 205, 60) : new Color(230, 70, 60);
+        Color fill = won ? new Color(70, 40, 15) : new Color(45, 20, 25);
+        RoundRectangle2D.Double outer = new RoundRectangle2D.Double(px, py, pw, ph, 36, 36);
+        RoundRectangle2D.Double inner =
+                new RoundRectangle2D.Double(px + 10, py + 10, pw - 20, ph - 20, 26, 26);
+
+        g.setColor(new Color(0, 0, 0, (int) (90 * k)));
+        g.fill(new RoundRectangle2D.Double(px + 6, py + 10, pw, ph, 36, 36));
+        g.setColor(new Color(fill.getRed(), fill.getGreen(), fill.getBlue(), (int) (235 * k)));
+        g.fill(outer);
+        g.setColor(new Color(accent.getRed(), accent.getGreen(), accent.getBlue(), a));
+        g.setStroke(new BasicStroke(6f));
+        g.draw(outer);
+        g.setColor(new Color(accent.getRed(), accent.getGreen(), accent.getBlue(), (int) (110 * k)));
+        g.setStroke(new BasicStroke(2f));
+        g.draw(inner);
+        g.setStroke(new BasicStroke(1f));
     }
 
     private void drawOverlay(Graphics2D g) {
@@ -297,6 +323,7 @@ public class BossScene extends Scene {
         if (phase == Phase.WON || phase == Phase.LOST) {
             if (endT < 0.3) return;
             boolean won = phase == Phase.WON;
+            drawResultFrame(g, won, Math.min(1.0, (endT - 0.3) / 0.35));
             g.setFont(new Font("Tahoma", Font.BOLD, 72));
             Art.outlinedText(
                     g,

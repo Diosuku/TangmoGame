@@ -9,9 +9,9 @@ public record Level(int number, String name, int mergeGoal, BossType boss, Strin
             List.of(
                     new Level(1, "สวนสับปะรด", 120, BossType.PINEAPPLE, "พุ่มหนาม + แท่นลอย"),
                     new Level(2, "ป่าทุเรียน", 250, BossType.DURIAN, "โคลนหนืด + แท่นเลื่อน"),
-                    new Level(3, "ไร่พริกผี", 400, BossType.PEPPER, "ลาวาพุ่งจากพื้น"),
+                    new Level(3, "ไร่พริกผี", 300, BossType.PEPPER, "ลาวาพุ่งจากพื้น"),
                     new Level(
-                            4, "ถ้ำน้ำแข็ง", 550, BossType.BLUEBERRY, "พื้นลื่น + ลม + น้ำแข็งตก"));
+                            4, "ถ้ำน้ำแข็ง", 380, BossType.BLUEBERRY, "พื้นลื่น + ลม + น้ำแข็งตก"));
 
     public int bonusHearts(int score) {
         return Math.max(0, Math.min(3, (score - mergeGoal) / (mergeGoal / 2)));
