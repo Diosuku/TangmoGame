@@ -279,7 +279,7 @@ public class BossScene extends Scene {
 
         g.setFont(new Font("Tahoma", Font.PLAIN, 12));
         g.drawString(
-                "←/→ เดิน  Space กระโดด  ↓ ลงจากแท่น  Z/J ยิง  K/X แดช  Esc เมนู",
+                "←/→ เดิน  Space ↑ กระโดด  ↓ ลงจากแท่น  Z/J ยิง  K/X แดช  Esc เมนู",
                 GamePanel.W - 440,
                 712);
     }
